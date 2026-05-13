@@ -1,0 +1,38 @@
+# MakerPeek — Project Rules
+
+## Product
+MakerPeek is a Chrome extension (Manifest V3) that surfaces real sales estimates, POD-supplier detection, base-product analysis, niche/theme extraction, margin estimation, and design velocity on competitor Shopify stores. Targets POD-focused Shopify sellers. Pricing: $14/mo or $129/yr, single tier.
+
+## Stack
+- Chrome Extension: Manifest V3, vanilla JS in content scripts (no React), TypeScript where possible
+- Backend: Next.js 15 (App Router) on Vercel
+- Database: Supabase (Postgres + Auth via magic link)
+- Payments: Stripe Checkout (monthly + annual)
+- Data: Public Shopify /products.json endpoint, fetched per-request (no bulk pre-scraping)
+- AI: Anthropic Claude API (Sonnet 4.6) for niche/theme extraction, only on paid tier
+- Scraping infrastructure: Apify Etsy actor NOT needed — use direct fetch to Shopify /products.json
+
+## Conventions
+- TypeScript strict mode everywhere
+- API routes in /app/api/[...]/route.ts (Next.js App Router)
+- Extension code in /extension/ (content scripts, background worker, popup)
+- Shared types in /shared/types.ts
+- No ENV secrets in client code, ever
+- All Claude API calls go through backend, never the extension
+
+## Constraints
+- Rate limit Shopify /products.json calls to <40/min per store per IP
+- Free tier: 5 lookups/day, by IP + extension fingerprint, no signup
+- Paid tier: unlimited lookups, AI features unlocked
+- Never cache Shopify product data server-side beyond 24 hours (be respectful of public endpoint)
+- Inventory quantity is NOT available publicly — only boolean `available` per variant
+- Pricing locked at $14/mo, $129/yr; no feature reshuffling later
+
+## Voice for User-Facing Copy
+Direct, no fluff, no preamble. Match the landing page tone (forest green/cream palette, Fraunces + Inter typography). Honest pricing as a brand promise.
+
+## Out of Scope for v1
+- Own-shop OAuth integration
+- Multi-marketplace support (Etsy, Amazon, etc.)
+- Mobile / Firefox / Safari
+- Team accounts

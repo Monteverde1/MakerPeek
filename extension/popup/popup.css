@@ -1,0 +1,107 @@
+/* MakerPeek popup — forest green #3D5944 on cream #FBF7F2 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fbf7f2;
+  color: #1a1a1a;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
+  font-size: 13px;
+  width: 280px;
+  min-height: 200px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 18px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 700;
+  color: #3d5944;
+  letter-spacing: -0.3px;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+  display: inline-block;
+}
+
+.status-dot.active {
+  background-color: #3d5944;
+}
+
+.tagline {
+  color: #555;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.usage-box {
+  background: #fff;
+  border: 1px solid #e5e0d8;
+  border-radius: 8px;
+  padding: 10px 14px;
+}
+
+.usage-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.usage-count {
+  font-size: 22px;
+  font-weight: 700;
+  color: #3d5944;
+  margin-top: 2px;
+}
+
+.cta-btn {
+  width: 100%;
+  background-color: #3d5944;
+  color: #fbf7f2;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.cta-btn:hover {
+  opacity: 0.88;
+}
+
+footer {
+  font-size: 11px;
+  color: #aaa;
+  text-align: center;
+}
+
+footer a {
+  color: #888;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
