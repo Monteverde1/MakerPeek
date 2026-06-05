@@ -26,9 +26,11 @@ Stack:
 
 - Vercel (deployment)
 
+Links: 
 
+Chrome web store: https://chromewebstore.google.com/detail/makerpeek-shopify-store-r/gdnlmpkemmeemdecdcpbnmjjfipdgmfm
 
-Website: makerpeek.com
+Website: [makerpeek.com](https://www.makerpeek.com/)
 
 Status:
 - Live and published on the Chrome Web Store. Actively maintained.
