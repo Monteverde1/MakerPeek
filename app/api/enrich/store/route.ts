@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
+import {
+  parsePublicHttpsStoreUrl,
+  UnsafeStoreUrlError,
+} from "@/lib/public-store-url";
 
 const bodySchema = z.object({
   store_url: z.string().url(),
@@ -7,7 +11,7 @@ const bodySchema = z.object({
 
 // TODO: perform store-level analysis:
 //       - Detect POD supplier from product titles/tags/vendor strings
-//       - Identify primary niche(s) using Claude (paid tier only)
+//       - Identify primary niche(s) from product text (heuristic or future LLM)
 //       - Calculate design velocity from created_at distribution
 //       - Return aggregate store health / opportunity signal
 
@@ -23,6 +27,18 @@ export async function POST(req: NextRequest) {
   }
 
   const { store_url } = parsed.data;
+
+  try {
+    parsePublicHttpsStoreUrl(store_url);
+  } catch (e) {
+    if (e instanceof UnsafeStoreUrlError) {
+      return NextResponse.json(
+        { error: "Invalid store URL — must be a public https storefront URL." },
+        { status: 400 }
+      );
+    }
+    throw e;
+  }
 
   return NextResponse.json({
     store_url,

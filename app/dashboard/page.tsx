@@ -1,25 +1,35 @@
-// TODO: Implement authenticated dashboard.
-//       - Protect route with Supabase session check (redirect to / if unauthenticated)
-//       - Show user plan (free/pro), remaining lookups today, recent lookup history
-//       - Pro users: link to manage subscription via Stripe customer portal
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
+import { ensureProfile, getProfileByUserId } from "@/lib/profiles";
+import DashboardClient from "./dashboard-client";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect("/login?next=/dashboard");
+  }
+
+  await ensureProfile(user.id, user.email ?? null);
+  const profile = await getProfileByUserId(user.id);
+  const plan = profile?.plan === "pro" ? "pro" : "free";
+
   return (
     <main className="max-w-3xl mx-auto px-6 py-16">
       <h1 className="text-2xl font-bold mb-2" style={{ color: "#3D5944" }}>
         Dashboard
       </h1>
       <p className="text-neutral-500 text-sm mb-8">
-        [Stub — authentication and data not wired up yet]
+        Manage your MakerPeek account and Pro subscription.
       </p>
-
-      <div className="rounded-xl border border-neutral-200 p-6 bg-white">
-        <p className="font-medium text-neutral-700">Plan</p>
-        <p className="text-3xl font-bold mt-1" style={{ color: "#3D5944" }}>
-          Free
-        </p>
-        <p className="text-sm text-neutral-400 mt-1">3 of 5 lookups used today</p>
-      </div>
+      <DashboardClient
+        email={user.email ?? profile?.email ?? ""}
+        plan={plan}
+        subscriptionStatus={profile?.subscription_status ?? null}
+      />
     </main>
   );
 }

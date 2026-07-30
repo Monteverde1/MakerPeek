@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="MakerPeek">
+  <rect width="32" height="32" fill="#3D5944"/>
+  <text x="16" y="16" dominant-baseline="central" text-anchor="middle"
+    fill="#FBF7F2" font-family="Georgia, 'Times New Roman', Times, serif"
+    font-size="15" font-weight="700">M</text>
+</svg>

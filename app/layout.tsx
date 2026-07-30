@@ -17,14 +17,14 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MakerPeek — Seller research for digital & POD shops",
+  title: "MakerPeek — Verifiable Shopify research for digital & POD sellers",
   description:
-    "A Chrome extension for sellers on Shopify that surfaces real sales estimates, supplier detection, and theme analysis — built for POD-focused stores other tools get wrong.",
+    "A Chrome extension for Shopify that surfaces verifiable product data, pricing patterns, app stack detection, and Pro watchlist change alerts — built for digital and POD sellers.",
   metadataBase: new URL("https://makerpeek.com"),
   openGraph: {
-    title: "MakerPeek — Seller research for digital & POD shops",
+    title: "MakerPeek — Verifiable Shopify research for digital & POD sellers",
     description:
-      "Real sales estimates and supplier intelligence for POD-focused Shopify shops.",
+      "Verifiable Shopify research. Every number sourced. App stack detection, pricing analysis, and Pro watchlist change alerts for digital and POD sellers.",
     url: "https://makerpeek.com",
     type: "website",
   },

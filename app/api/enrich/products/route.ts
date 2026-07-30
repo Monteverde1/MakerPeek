@@ -1,13 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import type { EnrichmentResponse } from "@/shared/types";
+import {
+  parsePublicHttpsStoreUrl,
+  UnsafeStoreUrlError,
+} from "@/lib/public-store-url";
 
 const bodySchema = z.object({
   store_url: z.string().url(),
 });
 
 // TODO: fetch `${store_url}/products.json?limit=250`, parse raw Shopify products,
-//       run supplier detection, theme extraction (Claude on paid tier),
+//       run supplier detection, theme extraction, sales score estimation, and margin calculation.
 //       sales score estimation, and margin calculation.
 
 export async function POST(req: NextRequest) {
@@ -22,6 +26,18 @@ export async function POST(req: NextRequest) {
   }
 
   const { store_url } = parsed.data;
+
+  try {
+    parsePublicHttpsStoreUrl(store_url);
+  } catch (e) {
+    if (e instanceof UnsafeStoreUrlError) {
+      return NextResponse.json(
+        { error: "Invalid store URL — must be a public https storefront URL." },
+        { status: 400 }
+      );
+    }
+    throw e;
+  }
 
   const placeholder: EnrichmentResponse = {
     store_url,

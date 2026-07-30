@@ -1,3 +1,4 @@
+<!-- PRICING: $11/mo or $81/yr (save $33 = 25% off) -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,31 +9,65 @@
   </head>
   <body>
     <div class="container">
-      <header>
-        <h1 class="logo">MakerPeek</h1>
-        <span class="status-dot" id="status-dot" title="Not on a Shopify store"></span>
+
+      <header class="header">
+        <div class="header-inner">
+          <div class="brand">MakerPeek</div>
+          <span class="pro-badge" id="pro-badge" style="display:none">PRO</span>
+        </div>
       </header>
 
-      <main>
-        <p class="tagline">Honest seller research for POD shops.</p>
-
-        <div class="usage-box">
-          <p class="usage-label">Free lookups today</p>
-          <p class="usage-count"><span id="used">—</span> / 5</p>
+      <section class="usage-section" id="counter-section">
+        <div class="usage-label-row">
+          <span class="usage-label">Stores viewed today</span>
+          <span class="usage-count"><span id="js-count">0</span> / 5</span>
         </div>
+        <div class="progress-track">
+          <div class="progress-fill" id="js-progress" style="width:0%"></div>
+        </div>
+      </section>
 
-        <button class="cta-btn" id="sign-in-btn">
-          Sign in to unlock unlimited lookups
+      <section class="upgrade-section" id="upgrade-section">
+        <button type="button" class="btn-primary auth-btn" id="btn-pro-monthly">Get Pro $11/mo</button>
+        <button type="button" class="btn-outline auth-btn" id="btn-pro-annual">Get Pro $81/yr</button>
+        <button type="button" class="upgrade-refresh" id="btn-refresh-status">
+          Already paid? Click here to refresh.
         </button>
-      </main>
+      </section>
 
-      <footer>
-        <a href="https://makerpeek.com/privacy" target="_blank" rel="noopener">Privacy</a>
-        &middot;
-        <a href="https://makerpeek.com" target="_blank" rel="noopener">makerpeek.com</a>
-      </footer>
+      <div class="tab-strip" id="js-tab-strip" hidden>
+        <button class="tab-btn tab-btn--active" id="js-tab-today" data-tab="today">Today</button>
+        <button class="tab-btn" id="js-tab-watchlist" data-tab="watchlist">Watchlist</button>
+      </div>
+
+      <div id="js-pane-today">
+        <section class="status-section" id="js-status-section"></section>
+        <section class="diag-section" id="js-diag-section">
+          <button type="button" class="btn-outline diag-run-btn" id="js-run-detection">
+            Run detection on current tab
+          </button>
+          <pre class="diag-output" id="js-diag-output" hidden></pre>
+        </section>
+      </div>
+
+      <div id="js-pane-watchlist" hidden>
+        <section class="watchlist-section">
+          <div class="watchlist-header-row">
+            <span class="watchlist-count-label" id="js-watchlist-count">Watchlist (0/25)</span>
+            <button class="watchlist-alert-link" id="js-watchlist-alert-settings">Alert settings</button>
+          </div>
+          <div id="js-watchlist-list"></div>
+        </section>
+        <section class="alert-settings-panel" id="js-alert-settings-panel" hidden>
+          <div class="alert-settings-header">
+            <span>Alert settings</span>
+            <button class="alert-settings-close" id="js-alert-settings-close">✕</button>
+          </div>
+          <div class="alert-settings-body" id="js-alert-settings-body"></div>
+        </section>
+      </div>
+
     </div>
-
-    <script src="popup.js"></script>
+    <script type="module" src="popup.js"></script>
   </body>
 </html>

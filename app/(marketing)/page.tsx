@@ -1,3 +1,4 @@
+// PRICING: $11/mo or $99/yr (save $33 = 25% off)
 import WaitlistForm from "./waitlist-form";
 
 export default function HomePage() {
@@ -27,7 +28,7 @@ export default function HomePage() {
               for digital and POD shops.
             </h1>
             <p className="mt-7 text-lg md:text-xl text-ink-soft max-w-2xl mx-auto leading-relaxed">
-              MakerPeek is a Chrome extension for sellers on Shopify. It surfaces real sales estimates, supplier detection, and theme analysis on every store — built for digital downloads and print-on-demand sellers that existing tools get wrong.
+              MakerPeek is a Chrome extension for Shopify. It surfaces verifiable product data, pricing patterns, app stack detection, and Pro watchlist change alerts — built for digital and print-on-demand sellers that existing tools get wrong.
             </p>
             <WaitlistForm />
           </div>
@@ -43,15 +44,15 @@ export default function HomePage() {
                 <div className="w-10 h-10 rounded-lg bg-forest-soft flex items-center justify-center mb-5">
                   <svg className="w-5 h-5 text-forest" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M3 13l4 4L19 5" /></svg>
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-3">POD supplier detection</h3>
-                <p className="text-ink-soft leading-relaxed">Detects whether a store uses Printful, Printify, Gelato, or CustomCat by fingerprinting product handles, image URLs, and SKU patterns. Generic spy tools can't tell you this.</p>
+                <h3 className="font-serif text-xl font-semibold mb-3">App stack & POD detection</h3>
+                <p className="text-ink-soft leading-relaxed">Detects Printify, Printful, Gooten, and 80+ other Shopify apps by matching public script signatures on every store you visit. Infers likely tooling (Shop Pay, email platforms) from variant counts and page signals when no signature matches.</p>
               </div>
               <div>
                 <div className="w-10 h-10 rounded-lg bg-forest-soft flex items-center justify-center mb-5">
                   <svg className="w-5 h-5 text-forest" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M7 7h.01M7 3h5a1.99 1.99 0 011.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.99 1.99 0 013 12V7a4 4 0 014-4z" /></svg>
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-3">Theme & niche extraction</h3>
-                <p className="text-ink-soft leading-relaxed">POD listings cluster around themes — cottagecore, vintage Americana, witchy, fandom. MakerPeek extracts and aggregates these from titles and tags so your keyword research reflects what's truly selling.</p>
+                <h3 className="font-serif text-xl font-semibold mb-3">Catalog &amp; pricing signals</h3>
+                <p className="text-ink-soft leading-relaxed">Price distribution, on-sale breadth, charm vs. round pricing prevalence, variant patterns, and monthly listing velocity. Every number cites the Shopify endpoint it came from — no estimates, no guesses.</p>
               </div>
               <div>
                 <div className="w-10 h-10 rounded-lg bg-forest-soft flex items-center justify-center mb-5">
@@ -76,8 +77,8 @@ export default function HomePage() {
                 <div className="font-serif text-5xl font-semibold mt-3">$0</div>
                 <p className="text-ink-soft mt-2 text-sm">forever</p>
                 <ul className="mt-6 space-y-3 text-sm text-ink">
-                  <li className="flex gap-2"><span className="text-forest">✓</span> 5 store lookups per day</li>
-                  <li className="flex gap-2"><span className="text-forest">✓</span> Sales estimates &amp; supplier detection</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> 5 store views per day</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Product catalog data, pricing overview, stock status</li>
                   <li className="flex gap-2"><span className="text-forest">✓</span> No signup required</li>
                 </ul>
               </div>
@@ -85,17 +86,22 @@ export default function HomePage() {
                 <div className="absolute -top-3 right-6 px-3 py-1 rounded-full bg-forest text-white text-xs font-semibold uppercase tracking-wide">Save $39/yr</div>
                 <div className="text-sm font-medium text-forest uppercase tracking-wide">Pro</div>
                 <div className="flex items-baseline gap-2 mt-3">
-                  <span className="font-serif text-5xl font-semibold">$14</span>
+                  <span className="font-serif text-5xl font-semibold">$11</span>
                   <span className="text-ink-soft">/ month</span>
                 </div>
-                <p className="text-ink-soft mt-2 text-sm">or <span className="font-medium text-ink">$129/year</span> — save $39</p>
+                <p className="text-ink-soft mt-2 text-sm">or <span className="font-medium text-ink">$99/year</span> — save $33</p>
                 <ul className="mt-6 space-y-3 text-sm text-ink">
-                  <li className="flex gap-2"><span className="text-forest">✓</span> Unlimited store lookups</li>
-                  <li className="flex gap-2"><span className="text-forest">✓</span> AI theme extraction &amp; niche analysis</li>
-                  <li className="flex gap-2"><span className="text-forest">✓</span> Margin estimation per product</li>
-                  <li className="flex gap-2"><span className="text-forest">✓</span> Design velocity tracking</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Watchlist with daily change alerts. Track up to 25 stores. Desktop notification when a store adds products, changes prices, or restocks.</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Unlimited store views (vs 5/day on free)</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Price distribution histogram + variant breakdown</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Pricing patterns: charm/round %, median, std dev, free shipping threshold</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Full lifetime store activity calendar</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Searchable full product list with stock status</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> All collections (vs top 3 on free)</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Save stores to your history</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Export to CSV</li>
                   <li className="flex gap-2"><span className="text-forest">✓</span> Priority email support</li>
-                  <li className="flex gap-2"><span className="text-forest">✓</span> Price locked at $14/mo, forever</li>
+                  <li className="flex gap-2"><span className="text-forest">✓</span> Price locked at $11/mo, forever</li>
                 </ul>
               </div>
             </div>
@@ -108,7 +114,7 @@ export default function HomePage() {
             <div className="space-y-8">
               <div>
                 <h3 className="font-serif text-lg font-semibold mb-2">Will you raise prices or move features into a higher tier later?</h3>
-                <p className="text-ink-soft leading-relaxed">No. The $14/month and $129/year plans are locked at those prices for every customer who signs up, for as long as you stay subscribed. New features for advanced users would go to a new tier; existing plans stay exactly as bought.</p>
+                <p className="text-ink-soft leading-relaxed">No. The $11/month and $99/year plans are locked at those prices for every customer who signs up, for as long as you stay subscribed. New features for advanced users would go to a new tier; existing plans stay exactly as bought.</p>
               </div>
               <div>
                 <h3 className="font-serif text-lg font-semibold mb-2">Where does MakerPeek get its data?</h3>
@@ -120,7 +126,7 @@ export default function HomePage() {
               </div>
               <div>
                 <h3 className="font-serif text-lg font-semibold mb-2">Does it work for non-POD Shopify shops?</h3>
-                <p className="text-ink-soft leading-relaxed">Yes. MakerPeek works for any Shopify store. POD-specific intelligence (supplier detection, base product analysis, margin estimation) shows when relevant; general sales and theme data shows for every store.</p>
+                <p className="text-ink-soft leading-relaxed">Yes. MakerPeek works for any Shopify store. POD-specific signals (app stack detection, variant pattern analysis, AOP keyword scanning) surface when relevant; general catalog and activity data shows for every store.</p>
               </div>
               <div>
                 <h3 className="font-serif text-lg font-semibold mb-2">When does it launch?</h3>

@@ -1,14 +1,8 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+import { handleStripeWebhook } from "@/lib/stripe-webhook-handler";
 
-// TODO: verify Stripe webhook signature using STRIPE_WEBHOOK_SECRET,
-//       handle events: checkout.session.completed → upgrade user to pro,
-//       customer.subscription.deleted → downgrade user to free,
-//       invoice.payment_failed → notify user.
+export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
-  // Raw body needed for signature verification — do not parse as JSON here
-  const _rawBody = await req.text();
-
-  // Placeholder — events not processed
-  return NextResponse.json({ received: true });
+  return handleStripeWebhook(req);
 }

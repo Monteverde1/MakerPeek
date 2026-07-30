@@ -1,8 +1,8 @@
 # MakerPeek
 
-Honest seller research for POD-focused Shopify shops. Surfaces sales estimates, POD supplier detection, niche/theme extraction, margin estimation, and design velocity on any public Shopify store.
+MakerPeek is a Chrome extension for verifiable Shopify research. Every metric is sourced from public store data (/products.json, /collections.json, DOM) with a click-to-verify tooltip on each number. Surfaces catalog stats, pricing patterns, app stack detection, store maturity, launch cadence, Pro watchlist change alerts (background checks ~every 6 h), and richer catalog views for subscribers.
 
-**Pricing:** $14/mo · $129/yr · Single tier.
+**Pricing:** $11/mo · $99/yr · Single tier.
 
 ---
 
@@ -12,7 +12,6 @@ Honest seller research for POD-focused Shopify shops. Surfaces sales estimates, 
 - npm (or pnpm — swap `npm` for `pnpm` throughout)
 - A Supabase project (free tier is fine for dev)
 - A Stripe account with two products created (monthly + annual)
-- An Anthropic API key (Claude — used for paid-tier AI features only)
 - Chrome 120+ (for extension development)
 
 ---
@@ -74,7 +73,7 @@ makerpeek/
 │   └── dashboard/        Authenticated user dashboard
 ├── extension/            Chrome MV3 extension
 ├── shared/types.ts       TypeScript types (shared by backend + extension)
-├── lib/                  Third-party client init (Supabase, Stripe, Anthropic)
+├── lib/                  Third-party client init (Supabase, Stripe)
 └── .env.example          All required environment variables
 ```
 
@@ -85,5 +84,4 @@ makerpeek/
 - **Frontend/Backend:** Next.js 15 (App Router) on Vercel
 - **Database + Auth:** Supabase (Postgres, magic-link auth)
 - **Payments:** Stripe Checkout
-- **AI:** Anthropic Claude (Sonnet — paid tier only)
 - **Extension:** Chrome MV3, vanilla JS content scripts

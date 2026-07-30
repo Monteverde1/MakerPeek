@@ -18,3 +18,31 @@ html, body {
   background-color: var(--color-cream);
   color: var(--color-ink);
 }
+
+/* Prose styles for privacy/legal pages */
+.prose-makerpeek ul {
+  list-style: disc;
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.prose-makerpeek a {
+  color: var(--color-forest);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-makerpeek a:hover {
+  color: var(--color-forest-dark);
+}
+
+.prose-makerpeek code {
+  font-family: ui-monospace, monospace;
+  font-size: 0.82em;
+  background: var(--color-beige);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  color: var(--color-ink);
+}

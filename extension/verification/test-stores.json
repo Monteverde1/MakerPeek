@@ -1,0 +1,27 @@
+{
+  "general_dtc": [
+    "https://allbirds.com",
+    "https://gymshark.com",
+    "https://deathwishcoffee.com"
+  ],
+  "pod_focused": [
+    "https://www.printful.com/custom",
+    "https://shop.lookhuman.com",
+    "https://www.teepublic.com"
+  ],
+  "small_indie": [
+    "https://gazebogolf.ca",
+    "https://www.misen.com",
+    "https://kotn.com"
+  ],
+  "high_variant_count": [
+    "https://www.gymshark.com",
+    "https://shop.tesla.com",
+    "https://www.allbirds.com"
+  ],
+  "edge_cases": [
+    "https://shop.bbc.com",
+    "https://www.haus.com",
+    "https://us.princesspolly.com"
+  ]
+}

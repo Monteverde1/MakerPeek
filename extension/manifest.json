@@ -1,31 +1,44 @@
 {
   "manifest_version": 3,
-  "name": "MakerPeek",
-  "version": "0.0.1",
-  "description": "Honest seller research for POD-focused Shopify shops.",
-  "permissions": ["storage", "activeTab"],
-  "host_permissions": ["<all_urls>"],
-  "background": {
-    "service_worker": "background.js"
+  "name": "MakerPeek: Shopify store research",
+  "version": "1.0.0",
+  "description": "Shopify store research: catalog size, prices, bestsellers, and apps. 5 free lookups/day. Pro: watchlist, insights, unlimited.",
+  "icons": {
+    "16": "assets/icon-16.png",
+    "32": "assets/icon-32.png",
+    "48": "assets/icon-48.png",
+    "128": "assets/icon-128.png"
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content/detector.js", "content/overlay.js"],
-      "run_at": "document_idle"
-    }
-  ],
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
       "16": "assets/icon-16.png",
+      "32": "assets/icon-32.png",
       "48": "assets/icon-48.png",
       "128": "assets/icon-128.png"
     }
   },
-  "icons": {
-    "16": "assets/icon-16.png",
-    "48": "assets/icon-48.png",
-    "128": "assets/icon-128.png"
-  }
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": [
+        "content/detector.js",
+        "lib/snapshots.js",
+        "lib/format.js",
+        "lib/proof.js",
+        "lib/bestsellers.js",
+        "lib/app-categories.js",
+        "lib/fetchers.js",
+        "content/overlay.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "permissions": ["storage", "activeTab", "alarms", "notifications"],
+  "host_permissions": ["https://*/*"]
 }
