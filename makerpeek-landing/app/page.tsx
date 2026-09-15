@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import Image from "next/image";
 import Link from "next/link";
+import { faqItems, faqPageJsonLd } from "@/lib/faq";
 
 const CHROME_STORE_URL =
   "https://chromewebstore.google.com/detail/gdnlmpkemmeemdecdcpbnmjjfipdgmfm";
@@ -13,32 +14,13 @@ function publicFileExists(filename: string): boolean {
 const hasDemoVideo =
   publicFileExists("demo.mp4") || publicFileExists("demo.webm");
 
-const faqItems = [
-  {
-    question: "Does it work on every Shopify store?",
-    answer:
-      "Yes. Any public Shopify storefront. The extension stays inactive on non-Shopify sites.",
-  },
-  {
-    question: "Do I need an account?",
-    answer:
-      "Not for free. Pro requires a login so your watchlist syncs across devices.",
-  },
-  {
-    question: "What if I cancel Pro?",
-    answer:
-      "Monthly cancels immediately. Annual renews yearly with a 14-day reminder and one-click opt-out.",
-  },
-  {
-    question: "Will you raise the price?",
-    answer:
-      "No. $11/mo and $81/yr stay locked for as long as you stay subscribed.",
-  },
-] as const;
-
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd) }}
+      />
       <nav className="site-nav" aria-label="Main">
         <div className="container site-nav-inner">
           <Link href="/" className="logo">
