@@ -724,3 +724,62 @@ h2.section-title {
 .privacy-footer a:hover {
   color: #1a1814;
 }
+
+/* ---- alternative / comparison pages ---- */
+.alt-hero {
+  padding-bottom: 0;
+}
+.alt-hero h1 {
+  max-width: 20ch;
+}
+.alt-hero .hero-sub {
+  max-width: 62ch;
+}
+.alt-table-wrap {
+  overflow-x: auto;
+}
+.alt-table {
+  width: 100%;
+  min-width: 620px;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  text-align: left;
+}
+.alt-table th,
+.alt-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.09);
+  vertical-align: top;
+}
+.alt-table thead th {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom-width: 2px;
+}
+.alt-table tbody th {
+  font-weight: 600;
+  width: 22%;
+}
+.alt-table tbody td:first-of-type {
+  font-weight: 500;
+}
+.alt-source {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  opacity: 0.65;
+  max-width: 68ch;
+}
+.alt-when {
+  margin: 0;
+  padding-left: 1.2rem;
+  max-width: 68ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+@media (max-width: 640px) {
+  .alt-table {
+    font-size: 0.88rem;
+  }
+}

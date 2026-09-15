@@ -13,6 +13,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://makerpeek.com/koala-inspector-alternative",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://makerpeek.com/ppspy-alternative",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: "https://makerpeek.com/privacy",
       changeFrequency: "yearly",
       priority: 0.3,
