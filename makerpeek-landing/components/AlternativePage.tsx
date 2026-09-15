@@ -133,6 +133,7 @@ export default function AlternativePage({ alt }: { alt: Alternative }) {
               MakerPeek
             </Link>
             <div className="site-footer-links">
+              <Link href="/tools/shopify-app-detector">Free Shopify app detector</Link>
               <Link href="/privacy">Privacy</Link>
               <a href="mailto:hello@makerpeek.com">Contact</a>
             </div>

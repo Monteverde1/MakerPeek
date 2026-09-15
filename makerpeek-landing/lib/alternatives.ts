@@ -60,7 +60,8 @@ export const alternatives: Alternative[] = [
       },
       {
         label: "Theme detection",
-        makerpeek: "Not offered",
+        makerpeek:
+          "Yes \u2014 read from the storefront\u2019s own Shopify.theme / ShopifyAnalytics data, with the source shown",
         them: "Theme Detector",
       },
       {
@@ -83,7 +84,6 @@ export const alternatives: Alternative[] = [
     ],
     whenThem: [
       "You want an estimated monthly revenue figure. MakerPeek deliberately doesn't produce one — if a number on the screen is the deliverable, Koala Inspector gives you one and we don't.",
-      "You need to know which theme a store runs. MakerPeek doesn't detect themes today.",
       "You want ad campaign visibility, or CSV and Excel export.",
       "You track more than 25 stores.",
     ],
@@ -91,7 +91,7 @@ export const alternatives: Alternative[] = [
       {
         question: "Is MakerPeek a Koala Inspector alternative?",
         answer:
-          "For app stack, catalog and pricing research, yes. MakerPeek shows the categorized app stack, price distribution, bestsellers and launch cadence, and every figure cites the public Shopify endpoint it came from. It does not produce revenue or traffic estimates, and it does not detect themes.",
+          "For app stack, catalog and pricing research, yes. MakerPeek shows the categorized app stack, price distribution, bestsellers and launch cadence, and every figure cites the public Shopify endpoint it came from. It detects the store\u2019s theme too. What it does not do is produce revenue or traffic estimates.",
       },
       {
         question: "Why doesn't MakerPeek show estimated revenue?",
@@ -137,7 +137,8 @@ export const alternatives: Alternative[] = [
       },
       {
         label: "Theme detection",
-        makerpeek: "Not offered",
+        makerpeek:
+          "Yes \u2014 read from the storefront\u2019s own Shopify.theme / ShopifyAnalytics data, with the source shown",
         them: "Store Theme",
       },
       {
@@ -165,7 +166,6 @@ export const alternatives: Alternative[] = [
       "You want to discover stores you don't already know about. MakerPeek has no store directory — you open a storefront and it reads that store.",
       "You want predicted order volumes and revenue rankings, and you're comfortable acting on a model.",
       "You research competitor ad creative.",
-      "You need theme detection.",
     ],
     faq: [
       {

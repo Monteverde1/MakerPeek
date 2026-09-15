@@ -247,6 +247,9 @@ export default function HomePage() {
               MakerPeek
             </Link>
             <div className="site-footer-links">
+              <Link href="/tools/shopify-app-detector">Free Shopify app detector</Link>
+              <Link href="/koala-inspector-alternative">Koala Inspector alternative</Link>
+              <Link href="/ppspy-alternative">PPSPY alternative</Link>
               <Link href="/privacy">Privacy</Link>
               <a href="mailto:hello@makerpeek.com">Contact</a>
             </div>

@@ -13,6 +13,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
+      url: "https://makerpeek.com/tools/shopify-app-detector",
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: "https://makerpeek.com/koala-inspector-alternative",
       changeFrequency: "monthly",
       priority: 0.7,
