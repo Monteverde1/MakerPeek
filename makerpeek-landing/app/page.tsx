@@ -32,7 +32,7 @@ const faqItems = [
   {
     question: "Will you raise the price?",
     answer:
-      "No. $11/mo and $99/yr stay locked for as long as you stay subscribed.",
+      "No. $11/mo and $81/yr stay locked for as long as you stay subscribed.",
   },
 ] as const;
 
@@ -161,7 +161,7 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              or $99/year — save $33
+              or $81/year — save $51
             </a>
           </div>
         </div>
@@ -201,7 +201,7 @@ export default function HomePage() {
               <div className="amount">
                 $11<span className="amount-suffix">/mo</span>
               </div>
-              <p className="amount-note">or $99/year — save $33</p>
+              <p className="amount-note">or $81/year — save $51</p>
               <ul>
                 <li>
                   <strong>Unlimited store views</strong>
